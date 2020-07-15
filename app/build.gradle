@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
 
 repositories {
@@ -6,6 +7,7 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    mavenCentral()
 }
 
 android {
@@ -44,4 +46,6 @@ dependencies {
 
     //add the firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics:17.4.3'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
