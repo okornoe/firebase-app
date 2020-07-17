@@ -108,10 +108,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // TODO: Fire an intent to show an image picker
-/*                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 intent.setType("image/*");
-                startActivityForResult(intent, REQUEST_IMAGE);*/
+                startActivityForResult(intent, REQUEST_IMAGE);
             }
         });
 
