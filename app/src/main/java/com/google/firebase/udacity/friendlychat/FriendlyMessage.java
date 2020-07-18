@@ -17,9 +17,11 @@ package com.google.firebase.udacity.friendlychat;
 
 public class FriendlyMessage {
 
+    private String id;
     private String text;
     private String name;
     private String photoUrl;
+    private String imageUrl;
 
     public FriendlyMessage() {
     }
@@ -28,6 +30,13 @@ public class FriendlyMessage {
         this.text = text;
         this.name = name;
         this.photoUrl = photoUrl;
+    }
+
+    public FriendlyMessage(String text, String name, String photoUrl, String imageUrl) {
+        this.text = text;
+        this.name = name;
+        this.photoUrl = photoUrl;
+        this.imageUrl = imageUrl;
     }
 
     public String getText() {
