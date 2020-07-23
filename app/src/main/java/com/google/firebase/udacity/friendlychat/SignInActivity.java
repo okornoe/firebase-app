@@ -100,9 +100,10 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
                         if(!task.isSuccessful()) {
                             Log.w("TAG", "signInwithCredential", task.getException());
-                            Toast.makeText(SignInActivity.this, "", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
                         } else {
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                            finish();
                         }
                     }
                 });
