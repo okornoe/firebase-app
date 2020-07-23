@@ -12,8 +12,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
-    public MessageAdapter(Context context, int resource, List<FriendlyMessage> objects) {
+//public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
+/*    public MessageAdapter(Context context, int resource, List<FriendlyMessage> objects) {
         super(context, resource, objects);
     }
 
@@ -44,5 +44,5 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
         authorTextView.setText(message.getName());
 
         return convertView;
-    }
-}
+    }*/
+//}
