@@ -34,7 +34,9 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -88,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
         mUsername = ANONYMOUS;
 
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mSignInClient = GoogleSignIn.getClient(this, gso);
+
         // Initialize references to views
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mMessageListView = (ListView) findViewById(R.id.messageListView);
@@ -108,10 +116,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // TODO: Fire an intent to show an image picker
-                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("image/*");
-                startActivityForResult(intent, REQUEST_IMAGE);
             }
         });
 
@@ -141,10 +145,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // TODO: Send messages on click
-                FriendlyMessage friendlyMessage = new FriendlyMessage(mMessageEditText.getText()
-                        .toString(), mUsername, null);
-                mFirebaseDatabaseReference.child(MESSAGES_CHILD)
-                        .push.setValue(friendlyMessage);
 
                 // Clear input box
                 mMessageEditText.setText("");
