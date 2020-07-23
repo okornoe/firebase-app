@@ -55,6 +55,9 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:25.6.0')
     implementation "com.google.firebase:firebase-storage:19.1.1"
 
+    // Firebase UI
+    implementation 'com.firebaseui:firebase-ui-database:6.2.1'
+
     //Google
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
 
